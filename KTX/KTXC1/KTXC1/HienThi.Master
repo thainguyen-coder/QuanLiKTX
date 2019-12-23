@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HienThi.master.cs" Inherits="KTXC1.HienThi" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body{
+            
+            background:#99CCCC;
+            
+        }
+        .auto-style2 {
+            width: 960px;
+            height: 639px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table>
+            <tr>
+                <td>
+                    <asp:Image ID="Image1" runat="server"  ImageUrl="~/Images/Settings-icon.png" Height="20px" Width="20px"/>
+                    <asp:Label ID="label1" runat="server" ForeColor="White" Font-Size="Large" Text="<strong>QUẢN LÝ KÝ TÚC XÁ TRƯỜNG ĐẠI HỌC QUY NHƠN</strong>" />
+                </td>
+            </tr>
+        </table>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+     </div>
+    </form>
+</body>
+</html>
