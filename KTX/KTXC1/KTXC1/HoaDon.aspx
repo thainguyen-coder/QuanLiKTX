@@ -114,13 +114,13 @@
             </tr>
             <tr>
                 <td class="auto-style8" colspan="3">
-                    &nbsp;<img src="img/them.png" height="30px" width="30px" /><asp:Button ID="Button1" runat="server" Text="Thêm" class="btn" OnClick="btnThem_Click"/>
+                    &nbsp;<img src="img/them.png" height="30px" width="30px" /><asp:Button ID="Button1" runat="server" Text="Thêm" class="btn" OnClick="Button1_Click"   />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="img/update.png" height="30px" width="30px" /><asp:Button ID="Button2" runat="server" Text="Chỉnh sửa" class="btn" OnClick="btnSua_Click"/>
+                    <img src="img/update.png" height="30px" width="30px" /><asp:Button ID="Button2" runat="server" Text="Chỉnh sửa" class="btn" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="img/xoa.png" height="30px" width="30px" /><asp:Button ID="Button3" runat="server" Text="Xóa" class="btn" OnClick="btnXoa_Click" OnClientClick="return confirm(&quot;Bạn chắc chắn muốn xóa?&quot;);"/>
+                    <img src="img/xoa.png" height="30px" width="30px" /><asp:Button ID="Button3" runat="server" Text="Xóa" class="btn"  OnClientClick="return confirm(&quot;Bạn chắc chắn muốn xóa?&quot;);"/>
                     </br>
-                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" OnClick="btnInHoaDon_Click"/>
+                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" />
                 </td>
             </tr>
 
@@ -131,7 +131,7 @@
                     <asp:TextBox ID="txtTim" runat="server" class="txt"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="img/search.png"/ height="30px" width="30px">
-                    <asp:Button ID="btnTim" runat="server" Text="Tìm kiếm" class="btn" OnClick="btnTim_Click" />
+                    <asp:Button ID="btnTim" runat="server" Text="Tìm kiếm" class="btn"  />
                     <div style="padding-left: 4em">
                     <asp:Label ID="lblThongBao" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red"></asp:Label>
                     </div>

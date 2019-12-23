@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -199,6 +200,8 @@
     <Compile Include="HoaDon.aspx.designer.cs">
       <DependentUpon>HoaDon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Hoadon.cs" />
+    <Compile Include="HoaDonDAO.cs" />
     <Compile Include="KetNoi.aspx.cs">
       <DependentUpon>KetNoi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

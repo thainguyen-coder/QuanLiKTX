@@ -8,13 +8,12 @@ using System.Web;
 
 namespace KTXC1
 {
-    public class NhanVienDAO
+    public class HoaDonDAO
     {
         string connectionString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
-        
         public int ThongKe()
         {
-            string sql = @"SELECT COUNT(*) FROM NHANVIEN";
+            string sql = @"SELECT COUNT(*) FROM HOADON";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -23,49 +22,52 @@ namespace KTXC1
                 return count;
             }
         }
-        public bool KTMaNV(string manv)
+        public bool KTMaHD(string mahd)
         {
-            string sql = @"SELECT COUNT(*) FROM NHANVIEN WHERE maNV = @manv";
+            string sql = @"SELECT COUNT(*) FROM HOADON WHERE maHD = @mahd";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@manv", manv);
+                command.Parameters.AddWithValue("@mahd", mahd);
                 connection.Open();
                 int count = (int)command.ExecuteScalar();
                 return (count >= 1);
             }
         }
-        public NhanVien LayNhanVien(string manv)
+        public Hoadon LayHoaDon(string mahd)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"SELECT * FROM NHANVIEN WHERE maNV = @manv";
+                string sql = @"SELECT * FROM HOADON WHERE maHD = @mahd";
                 SqlCommand cmd = new SqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@manv", manv);
+                cmd.Parameters.AddWithValue("@mahd", mahd);
                 connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    NhanVien nv = new NhanVien
+                    Hoadon hd = new Hoadon
                     {
+                        MaHD = (string)reader["maHD"],
                         MaNV = (string)reader["maNV"],
-                        TenNV = (string)reader["hoTen"],
-                        NgaySinh = reader["ngaySinh"].ToString(),
-                        GioiTinh = (string)reader["gioiTinh"],
-                        CMND = (string)reader["cmnd"],
-                        SDT = (string)reader["sdt"],
-                        ChucVu = (string)reader["chucVu"],
+                        MaPhong = reader["maPhong"].ToString(),
+                        MaCongToDien = (string)reader["maCongToDien"],
+                        MaCongToNuoc = (string)reader["maCongToNuoc"],
+                        TongTien = (double)reader["tongTien"],
+                        NgayGhi = (string)reader["ngayGhi"],
+                        
                     };
-                    return nv;
+                    return hd;
                 }
             }
             return null;
         }
-        public DataTable LayNhanVien()
+
+
+        public DataTable LayHoaDon()
         {
             DataTable table = new DataTable();
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = @"SELECT * FROM NHANVIEN";
+            string sql = @"SELECT * FROM HOADON";
             SqlCommand command = new SqlCommand(sql, connection);
             SqlDataAdapter da = new SqlDataAdapter(command);
             da.Fill(table);
@@ -76,45 +78,45 @@ namespace KTXC1
         {
             DataTable table = new DataTable();
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = @"select * from NHANVIEN where(maNV LIKE N'%" + key + "%' or hoTen LIKE N'%" + key + "%')";
+            string sql = @"select * from HOADON where(maNV LIKE N'%" + key + "%' or hoTen LIKE N'%" + key + "%')";
             SqlCommand command = new SqlCommand(sql, connection);
             SqlDataAdapter da = new SqlDataAdapter(command);
             da.Fill(table);
             return table;
         }
-        public bool Them(NhanVien nv)
+        public bool Them(Hoadon hd)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"INSERT INTO NHANVIEN(maNV,hoTen,ngaySinh,gioiTinh,cmnd,sdt,chucVu) VALUES(@manv, @ten, @ngaysinh, @gioitinh, @diachi, @sdt, @chucvu)";
+                string sql = @"INSERT INTO HOADON(maHD,maNV,maPhong,maCongToDien,maCongToNuoc,tongTien,ngayGhi) VALUES(@mahd, @manv, @maphong, @mctd, @mctn, @tongtien, @ngayghi)";
                 {
                     SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.AddWithValue("@manv", nv.MaNV);
-                    command.Parameters.AddWithValue("@ten", nv.TenNV);
-                    command.Parameters.AddWithValue("@ngaysinh", Convert.ToDateTime(nv.NgaySinh));
-                    command.Parameters.AddWithValue("@gioitinh", nv.GioiTinh);
-                    command.Parameters.AddWithValue("@diachi", nv.CMND);
-                    command.Parameters.AddWithValue("@sdt", nv.SDT);
-                    command.Parameters.AddWithValue("@chucvu", nv.ChucVu);
+                    command.Parameters.AddWithValue("@mahd", hd.MaHD);
+                    command.Parameters.AddWithValue("@manv", hd.MaNV);
+                    command.Parameters.AddWithValue("@maphong", hd.MaPhong);
+                    command.Parameters.AddWithValue("@mctd", hd.MaCongToDien);
+                    command.Parameters.AddWithValue("@mctn", hd.MaCongToNuoc);
+                    command.Parameters.AddWithValue("@tongtien", hd.TongTien);
+                    command.Parameters.AddWithValue("@ngayghi", Convert.ToDateTime(hd.NgayGhi));
                     connection.Open();
                     int result = command.ExecuteNonQuery();
                     return (result >= 1);
                 }
             }
         }
-        public bool ChinhSua(NhanVien nv)
+        public bool ChinhSua(Hoadon nv)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"UPDATE NHANVIEN SET hoTen= @ten, ngaySinh= @ngaysinh, gioiTinh = @gioitinh, cmnd = @cmnd,  sdt= @sdt, chucVu = @chucvu WHERE MaNV = @manv";
+                string sql = @"UPDATE HOADON SET maHD=@mahd,maNV=@manv,maPhong=@maphong,maCongToDien=@mctd,maCongToNuoc=@mctn,tongTien=@tongtien,ngayGhi=@ngayghi WHERE MaHD = @mahd";
                 SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@mahd", nv.MaHD);
                 command.Parameters.AddWithValue("@manv", nv.MaNV);
-                command.Parameters.AddWithValue("@ten", nv.TenNV);
-                command.Parameters.AddWithValue("@ngaysinh", Convert.ToDateTime(nv.NgaySinh));
-                command.Parameters.AddWithValue("@gioitinh", nv.GioiTinh);
-                command.Parameters.AddWithValue("@cmnd", nv.CMND);
-                command.Parameters.AddWithValue("@sdt", nv.SDT);
-                command.Parameters.AddWithValue("@chucvu", nv.ChucVu);
+                command.Parameters.AddWithValue("@maphong", nv.MaPhong);
+                command.Parameters.AddWithValue("@mctd", nv.MaCongToDien);
+                command.Parameters.AddWithValue("@mctn", nv.MaCongToNuoc);
+                command.Parameters.AddWithValue("@tongtien", nv.TongTien);
+                command.Parameters.AddWithValue("@ngayGhi", Convert.ToDateTime(nv.NgayGhi));
                 connection.Open();
                 int result = command.ExecuteNonQuery();
                 if (result >= 1)
@@ -128,14 +130,10 @@ namespace KTXC1
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"DELETE FROM NHANVIEN WHERE maNV = @manv";
-                string sql1 = @"DELETE FROM TAIKHOAN1 WHERE maNV = @manv";
+                string sql = @"DELETE FROM HOADON WHERE maHD = @mahd";
                 SqlCommand command = new SqlCommand(sql, connection);
-                SqlCommand command1 = new SqlCommand(sql1, connection);
-                command.Parameters.AddWithValue("@manv", manv);
-                command1.Parameters.AddWithValue("@manv", manv);
+                command.Parameters.AddWithValue("@mahd", manv);
                 connection.Open();
-                int result1 = command1.ExecuteNonQuery();
                 int result = command.ExecuteNonQuery();
                 if (result >= 1)
                 {

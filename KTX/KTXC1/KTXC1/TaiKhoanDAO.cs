@@ -13,7 +13,7 @@ namespace KTXC1
         string connectionString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
         public bool KTDangNhapQL(string tendangnhap, string mk)
         {
-            string sql = @"SELECT COUNT(*) FROM TAIKHOAN1 WHERE tenDangNhap='TDP' and matKhau = @mk ";
+            string sql = @"SELECT COUNT(*) FROM TAIKHOAN1 WHERE tenDangNhap=@tendangnhap and matKhau = @mk ";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -168,7 +168,7 @@ namespace KTXC1
                 command.Parameters.AddWithValue("@sdt", nv.SDT);
                 command.Parameters.AddWithValue("@chucvu", nv.ChucVu);
                 command1.Parameters.AddWithValue("@tendangnhap", nv.TenDangNhap);
-                command1.Parameters.AddWithValue("@chucvu", nv.MatKhau);
+                command1.Parameters.AddWithValue("@matkhau", nv.MatKhau);
                 command1.Parameters.AddWithValue("@manv", nv.MaNV);
                 connection.Open();
                 int result = command.ExecuteNonQuery();
@@ -179,19 +179,20 @@ namespace KTXC1
             }
             return false;
         }
-        public bool Xoa(string manv)
+        public bool Xoa(string manv, string tendangnhap)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"DELETE FROM NHANVIEN WHERE maNV = @manv";
                 string sql1 = @"DELETE FROM TAIKHOAN1 WHERE tenDangNhap = @tendangnhap";
-                SqlCommand command = new SqlCommand(sql, connection);
+                string sql = @"DELETE FROM NHANVIEN WHERE maNV = @manv";
                 SqlCommand command1 = new SqlCommand(sql1, connection);
+                SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@manv", manv);
-                command1.Parameters.AddWithValue("@tendangnhap", manv);
+                command1.Parameters.AddWithValue("@tendangnhap", tendangnhap);
                 connection.Open();
+                int result1 = command1.ExecuteNonQuery();
                 int result = command.ExecuteNonQuery();
-                if (result >= 1)
+                if (result1 >= 1)
                 {
                     return true;
                 }

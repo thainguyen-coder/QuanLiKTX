@@ -93,10 +93,11 @@ namespace KTXC1
         protected void btnXoa_Click(object sender, EventArgs e)
         {
             string manv = txtMaNV.Text;
+            string tendangnhap = txtTenDangNhap.Text;
 
             TaiKhoanDAO nvDAO = new TaiKhoanDAO();
 
-            bool result = nvDAO.Xoa(manv);
+            bool result = nvDAO.Xoa(manv,tendangnhap);
             if (result)
             {
                 lblThongBao.Text = "Xóa thành công";
@@ -142,7 +143,7 @@ namespace KTXC1
             string manv = gvTK.Rows[e.RowIndex].Cells[0].Text;
             string ten = gvTK.Rows[e.RowIndex].Cells[1].Text;
             TaiKhoanDAO khDAO = new TaiKhoanDAO();
-            bool result = khDAO.Xoa(manv);
+            bool result = khDAO.Xoa(manv,ten);
             if (result)
             {
                 lblThongBao.Text = "Đã xóa thành công nhân viên: " + ten;

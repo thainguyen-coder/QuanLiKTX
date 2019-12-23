@@ -23,6 +23,12 @@ namespace KTXC1
                 return (count >= 1);
             }
         }
+
+        internal bool Them(Hoadon ph)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Them(Phong ph)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
