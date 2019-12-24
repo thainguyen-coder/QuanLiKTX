@@ -34,7 +34,7 @@
             </asp:Menu>
     <div>
         <table style="width: 463px">
-            <asp:Label ID="Lable1" runat="server" Font-Bold="true" Font-Size="X-Large" ForeColor="Red" Text="HÓA ĐƠN" Style="text-align: center"></asp:Label>
+            <asp:Label ID="Lable1" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Red" Text="HÓA ĐƠN" Style="text-align: center" OnLoad="Lable1_Load"></asp:Label>
             <tr>
                 <td class="auto-style3">
 
@@ -116,11 +116,11 @@
                 <td class="auto-style8" colspan="3">
                     &nbsp;<img src="img/them.png" height="30px" width="30px" /><asp:Button ID="Button1" runat="server" Text="Thêm" class="btn" OnClick="Button1_Click"   />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="img/update.png" height="30px" width="30px" /><asp:Button ID="Button2" runat="server" Text="Chỉnh sửa" class="btn" />
+                    <img src="img/update.png" height="30px" width="30px" /><asp:Button ID="Button2" runat="server" Text="Chỉnh sửa" class="btn" OnClick="Button2_Click" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="img/xoa.png" height="30px" width="30px" /><asp:Button ID="Button3" runat="server" Text="Xóa" class="btn"  OnClientClick="return confirm(&quot;Bạn chắc chắn muốn xóa?&quot;);"/>
+                    <img src="img/xoa.png" height="30px" width="30px" /><asp:Button ID="Button3" runat="server" Text="Xóa" class="btn"  OnClientClick="return confirm(&quot;Bạn chắc chắn muốn xóa?&quot;);" OnClick="Button3_Click"/>
                     </br>
-                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" />
+                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" OnClick="Button5_Click" />
                 </td>
             </tr>
 
@@ -136,7 +136,7 @@
                     <asp:Label ID="lblThongBao" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red"></asp:Label>
                     </div>
                 </div>
-    <asp:GridView ID="gvHoaDon" runat="server" AutoGenerateColumns="False" CellPadding="3" GridLines="Vertical" Width="800px" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" >
+    <asp:GridView ID="gvHoaDon" runat="server" AutoGenerateColumns="False" CellPadding="3" GridLines="Vertical" Width="800px" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="gvHoaDon_SelectedIndexChanged" >
             <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>
                 <asp:BoundField DataField="maHD" HeaderText="Mã Hóa Đơn" />
@@ -146,6 +146,7 @@
                 <asp:BoundField DataField="maCongToNuoc" HeaderText="Mã CT Nước" />
                 <asp:BoundField  DataField="ngayGhi" HeaderText="Ngày Ghi" />
                 <asp:BoundField DataField="tongTien" HeaderText="Tổng Tiền" />
+                <asp:CommandField ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
             <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />

@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,10 +21,11 @@ namespace KTXC1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 LayDuLieu();
             }
+
         }
         private Hoadon LayDuLieuTuForm()
         {
@@ -81,6 +86,72 @@ namespace KTXC1
                 lblThongBao.Text = "cc";
             }
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Hoadon hd = LayDuLieuTuForm();
+            HoaDonDAO nvDAO = new HoaDonDAO();
+            bool result = nvDAO.ChinhSua(hd);
+            if (result)
+            {
+                lblThongBao.Text = "Cập nhật thành công cho nhân viên: " + hd.MaHD;
+                LayDuLieu();
+            }
+            else
+            {
+                lblThongBao.Text = "Cập nhật không thành công, vui lòng kiểm tra lại";
+            }
+        }
+
+        protected void gvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string manv = gvHoaDon.SelectedRow.Cells[0].Text;
+            HoaDonDAO nvDAO = new HoaDonDAO();
+            Hoadon nv = nvDAO.LayHoaDon(manv);
+            if (nv != null)
+            {
+                DoDuLieuVaoCacTruong(nv);
+            }
+        }
+        public void DoDuLieuVaoCacTruong(Hoadon nv)
+        {
+            txtMaHĐ.Text = nv.MaHD;
+            txtMaNV.Text = nv.MaNV;
+            txtMaPhong.Text = nv.MaPhong;
+            txtMaCTD.Text = nv.MaCongToDien;
+            txtMaCTN.Text = nv.MaCongToNuoc;
+            txtNgayGhi.Text = nv.NgayGhi;
+            TextBox1.Text = nv.TongTien.ToString();
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string manv = txtMaHĐ.Text;
+
+            HoaDonDAO nvDAO = new HoaDonDAO();
+
+            bool result = nvDAO.Xoa(manv);
+            if (result)
+            {
+                lblThongBao.Text = "Xóa thành công";
+                LayDuLieu();
+            }
+            else
+            {
+                lblThongBao.Text = "Xóa không thành công, vui lòng kiểm tra lại!";
+            }
+        }
+
+        protected void Lable1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
-    }
+}
