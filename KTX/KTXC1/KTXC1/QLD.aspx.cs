@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
+using System.Data.SqlClient;
 
 namespace KTXC1
 {
@@ -36,7 +38,7 @@ namespace KTXC1
             txtTieuthu.Text = tthu.ToString();
             Dien DN = LayDuLieuTuForm();
             DienDAO DienDAO = new DienDAO();
-            bool exist = DienDAO.checkmact(DN.MaCongToDien);
+            bool exist = DienDAO.checkmact(DN.Macongtodien);
             if (exist)
             {
                 lblThongBao.Text = "Mã công tơ nước đã tồn tại";
@@ -69,7 +71,7 @@ namespace KTXC1
             long thanhtien1 = Convert.ToInt64(thanhtien);
             Dien D = new Dien
             {
-                MaCongToDien = maCongToDien,
+                Macongtodien = maCongToDien,
                 ChisoDau = chisodau,
                 ChisoCuoi = chisocuoi,
                 NgayGhi = ngayghi,
@@ -82,6 +84,22 @@ namespace KTXC1
 
         protected void gvDienNuoc_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtMacongtodien.Text = gvDien.SelectedRow.Cells[0].Text;
+            txtChisocdau.Text = gvDien.SelectedRow.Cells[1].Text;
+            txtChisocuoi.Text = gvDien.SelectedRow.Cells[2].Text;
+            txtNgayghi.Text = gvDien.SelectedRow.Cells[3].Text;
+            txtDongia.Text = gvDien.SelectedRow.Cells[4].Text;
+        }
+        public void DoDuLieuVaoCacTruong(Dien nv)
+        {
+            txtMacongtodien.Text = nv.Macongtodien;
+            txtChisocdau.Text = nv.ChisoDau;
+            txtChisocuoi.Text = nv.ChisoCuoi;
+            txtNgayghi.Text = nv.NgayGhi;
+            txtDongia.Text = nv.DonGia.ToString();
+            txtTieuthu.Text = nv.TieuThu;
+            
+            
 
         }
 

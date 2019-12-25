@@ -7,7 +7,7 @@ namespace KTXC1
 {
     public class Dien
     {
-        string maCongToDien;
+        string macongtodien;
         string chisoDau;
         string chisoCuoi;
         string ngayGhi;
@@ -19,13 +19,6 @@ namespace KTXC1
             get { return tieuThu; }
             set { tieuThu = value; }
         }
-
-        public string MaCongToDien
-        {
-            get { return maCongToDien; }
-            set { maCongToDien = value; }
-        }
-
         public string NgayGhi
         {
             get { return ngayGhi; }
@@ -54,6 +47,19 @@ namespace KTXC1
             get { return chisoCuoi; }
             set { chisoCuoi = value; }
 
+        }
+
+        public string Macongtodien
+        {
+            get
+            {
+                return macongtodien;
+            }
+
+            set
+            {
+                macongtodien = value;
+            }
         }
     }
 }

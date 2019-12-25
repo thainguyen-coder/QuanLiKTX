@@ -33,7 +33,7 @@ namespace KTXC1
                 {
                     Dien D = new Dien
                     {
-                        MaCongToDien = (string)reader["maCongToDien"],
+                        Macongtodien = (string)reader["maCongToDien"],
                         ChisoDau = (string)reader["chiSoDau"],
                         ChisoCuoi = (string)reader["chiSoCuoi"],
                         DonGia = (float)reader["gia"],
@@ -93,7 +93,7 @@ namespace KTXC1
                 string sql = @"INSERT INTO DIEN(maCongToDien,chiSoDau,chiSoCuoi,tieuThu, gia, thanhTien,ngayGhi)
                                 VALUES(@mctd,@csd,@csc,@tthu,@Gia,@ttien,@ngayghi)";
                 SqlCommand cmd = new SqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@mctd", DN.MaCongToDien);
+                cmd.Parameters.AddWithValue("@mctd", DN.Macongtodien);
                 cmd.Parameters.AddWithValue("@csd", DN.ChisoDau);
                 cmd.Parameters.AddWithValue("@csc", DN.ChisoCuoi);
                 cmd.Parameters.AddWithValue("@tthu", DN.TieuThu);
@@ -111,7 +111,7 @@ namespace KTXC1
             {
                 string sql = @"UPDATE DIEN SET chiSoDau= @csd, chiSoCuoi = @csc, tieuThu = @tthu,  gia= @Gia, thanhTien = @ttien, ngayGhi=@ngayghi WHERE maCongToDien = @mctd";
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@mctd", DN.MaCongToDien);
+                command.Parameters.AddWithValue("@mctd", DN.Macongtodien);
                 command.Parameters.AddWithValue("@csd", DN.ChisoDau);
                 command.Parameters.AddWithValue("@csc", DN.ChisoCuoi);
                 command.Parameters.AddWithValue("@tthu", DN.TieuThu);
@@ -143,5 +143,32 @@ namespace KTXC1
             }
             return false;
         }
+        public Dien LayDien(string mactd)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT maCongToDien,chiSoDau,chiSoCuoi,ngayGhi,gia,TieuThu FROM DIEN WHERE maCongToDien = @mactd";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@mactd", mactd);
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    Dien hd = new Dien
+                    {
+                        Macongtodien = (string)reader["maCongToDien"],
+                        ChisoDau =(string) reader["chiSoDau"],
+                        ChisoCuoi =(string) reader["chiSoDau"],                                       
+                       // ThanhTien =(long)reader["thanhTien"],
+                        NgayGhi = reader["ngayGhi"].ToString(),
+                        DonGia = (float)reader["gia"],
+                        TieuThu =(string) reader["TieuThu"],
+                    };
+                    return hd;
+                }
+            }
+            return null;
+        }
+
     }
 }

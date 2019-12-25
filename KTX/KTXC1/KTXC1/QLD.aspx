@@ -137,6 +137,7 @@
                 <asp:BoundField DataField="NgayGhi" HeaderText="Ngày ghi" />
                 <asp:BoundField DataField="gia" HeaderText="Đơn giá" />
                 <asp:BoundField  DataField="ThanhTien" HeaderText="Thành tiền" />
+                <asp:CommandField ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
             <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
