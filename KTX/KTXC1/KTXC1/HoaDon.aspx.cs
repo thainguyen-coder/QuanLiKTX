@@ -7,6 +7,9 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.html.simpleparser;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Xml.Linq;
+using System.Web.UI;
+using System.Web;
 
 namespace KTXC1
 {
@@ -23,7 +26,7 @@ namespace KTXC1
             if (!IsPostBack)
             {
                 LayDuLieu();
-                BindGridViewData();
+                LayDuLieu();
             }
 
         }
@@ -32,7 +35,10 @@ namespace KTXC1
             string connection = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connection))
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select * from HOADON", con);
+                SqlDataAdapter da = new SqlDataAdapter(" SELECT * FROM HOADON  ", con);
+
+
+                
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 gvHoaDon.DataSource = ds;
@@ -156,70 +162,40 @@ namespace KTXC1
         {
 
         }
+        private void ExportGridToExcel()
+        {
+            //cach 2
+            Response.Clear();
+            Response.Buffer = true;
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.Charset = "";
+            string FileName = "Hóa Đơn" + DateTime.Now + ".xls";
+            StringWriter strwritter = new StringWriter();
+            HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", "attachment;filename=" + FileName);
+            gvHoaDon.GridLines = GridLines.Both;
+            gvHoaDon.HeaderStyle.Font.Bold = true;
+            gvHoaDon.RenderControl(htmltextwrtter);
+            Response.Write(strwritter.ToString());
+            Response.End();
+
+        }
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            /* Verifies that the control is rendered */
+        }
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-            int columnsCount = gvHoaDon.HeaderRow.Cells.Count;
-            // Create the PDF Table specifying the number of columns
-            PdfPTable pdfTable = new PdfPTable(columnsCount);
-            // Loop thru each cell in GrdiView header row
-            foreach (TableCell gridViewHeaderCell in gvHoaDon.HeaderRow.Cells)
-            {
-                // Create the Font Object for PDF document
-                Font font = new Font();
-                // Set the font color to GridView header row font color
-                font.Color = new BaseColor(gvHoaDon.HeaderStyle.ForeColor);
+            ExportGridToExcel();
 
-                // Create the PDF cell, specifying the text and font
-                PdfPCell pdfCell = new PdfPCell(new Phrase(gridViewHeaderCell.Text, font));
 
-                // Set the PDF cell backgroundcolor to GridView header row BackgroundColor color
-                pdfCell.BackgroundColor = new BaseColor(gvHoaDon.HeaderStyle.BackColor);
 
-                // Add the cell to PDF table
-                pdfTable.AddCell(pdfCell);
-            }
-            // Loop thru each datarow in GrdiView
-            foreach (GridViewRow gridViewRow in gvHoaDon.Rows)
-            {
-                if (gridViewRow.RowType == DataControlRowType.DataRow)
-                {
-                    // Loop thru each cell in GrdiView data row
-                    foreach (TableCell gridViewCell in gridViewRow.Cells)
-                    {
-                        Font font = new Font();
-                        font.Color = new BaseColor(gvHoaDon.RowStyle.ForeColor);
 
-                        PdfPCell pdfCell = new PdfPCell(new Phrase(gridViewCell.Text, font));
-
-                        pdfCell.BackgroundColor = new BaseColor(gvHoaDon.RowStyle.BackColor);
-
-                        pdfTable.AddCell(pdfCell);
-                    }
-                }
-
-            }
-        
-            // Create the PDF document specifying page size and margins
-            Document pdfDocument = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
-            // Roate page using Rotate() function, if you want in Landscape
-            // pdfDocument.SetPageSize(PageSize.A4.Rotate());
-
-            // Using PageSize.A4_LANDSCAPE may not work as expected
-            // Document pdfDocument = new Document(PageSize.A4_LANDSCAPE, 10f, 10f, 10f, 10f);
-
-            PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
-
-            pdfDocument.Open();
-            pdfDocument.Add(pdfTable);
-            pdfDocument.Close();
-
-            Response.ContentType = "application/pdf";
-            Response.AppendHeader("content-disposition",
-                "attachment;filename=HoaDon.pdf");
-            Response.Write(pdfDocument);
-            Response.Flush();
-            Response.End();
+            
         }
 
         protected void tinhThanhTien()

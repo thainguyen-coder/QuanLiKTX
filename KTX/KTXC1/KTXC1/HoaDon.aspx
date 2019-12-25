@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HienThi.Master" AutoEventWireup="true" CodeBehind="HoaDon.aspx.cs" Inherits="KTXC1.HoaDon" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HienThi.Master" AutoEventWireup="true" CodeBehind="HoaDon.aspx.cs" Inherits="KTXC1.HoaDon"  EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -140,8 +140,8 @@
     <asp:GridView ID="gvHoaDon" runat="server" AutoGenerateColumns="False" CellPadding="3" GridLines="Vertical" Width="800px" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="gvHoaDon_SelectedIndexChanged" >
             <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>
-                <asp:BoundField DataField="maHD" HeaderText="Mã Hóa Đơn" />
-                <asp:BoundField DataField="maNV" HeaderText="Mã Nhân Viên" />
+                <asp:BoundField DataField="maHD" HeaderText="Mã hóa đơn" />
+                <asp:BoundField DataField="maNV" HeaderText="Mã nhân viên" />
                 <asp:BoundField DataField="maPhong" HeaderText="Mã Phòng" />
                 <asp:BoundField DataField="maCongToDien" HeaderText="Mã CT Điện" />
                 <asp:BoundField DataField="maCongToNuoc" HeaderText="Mã CT Nước" />

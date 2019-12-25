@@ -53,7 +53,7 @@ namespace KTXC1
                         MaCongToDien = (string)reader["maCongToDien"],
                         MaCongToNuoc = (string)reader["maCongToNuoc"],
                         TongTien = (long)reader["tongTien"],
-                        NgayGhi = (string)reader["ngayGhi"],
+                        NgayGhi = reader["ngayGhi"].ToString(),
                         
                     };
                     return hd;

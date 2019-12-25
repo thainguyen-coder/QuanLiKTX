@@ -100,7 +100,7 @@
                     <asp:Label ID="Label6" runat="server" Text="Tiêu thụ:"></asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtTieuthu" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtTieuthu" runat="server" Enabled="False" ></asp:TextBox>
 
                 </td>
               
