@@ -52,7 +52,7 @@ namespace KTXC1
                         MaPhong = reader["maPhong"].ToString(),
                         MaCongToDien = (string)reader["maCongToDien"],
                         MaCongToNuoc = (string)reader["maCongToNuoc"],
-                        TongTien = (double)reader["tongTien"],
+                        TongTien = (long)reader["tongTien"],
                         NgayGhi = (string)reader["ngayGhi"],
                         
                     };
@@ -88,7 +88,8 @@ namespace KTXC1
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"INSERT INTO HOADON(maHD,maNV,maPhong,maCongToDien,maCongToNuoc,tongTien,ngayGhi) VALUES(@mahd, @manv, @maphong, @mctd, @mctn, @tongtien, @ngayghi)";
+                string sql = @"INSERT INTO HOADON(maHD,maNV,maPhong,maCongToDien,maCongToNuoc,tongTien,ngayGhi)
+                            VALUES(@mahd, @manv, @maphong, @mctd, @mctn, @tongtien, @ngayghi)";
                 {
                     SqlCommand command = new SqlCommand(sql, connection);
                     command.Parameters.AddWithValue("@mahd", hd.MaHD);
@@ -100,6 +101,7 @@ namespace KTXC1
                     command.Parameters.AddWithValue("@ngayghi", Convert.ToDateTime(hd.NgayGhi));
                     connection.Open();
                     int result = command.ExecuteNonQuery();
+                 
                     return (result >= 1);
                 }
             }
@@ -108,7 +110,7 @@ namespace KTXC1
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"UPDATE HOADON SET maHD=@mahd,maNV=@manv,maPhong=@maphong,maCongToDien=@mctd,maCongToNuoc=@mctn,tongTien=@tongtien,ngayGhi=@ngayghi WHERE MaHD = @mahd";
+                string sql = @"UPDATE HOADON SET maHD=@mahd,maNV=@manv,maPhong=@maphong,maCongToDien=@mctd,maCongToNuoc=@mctn,tongTien=@tongtien,ngayGhi=@ngayghi WHERE maHD = @mahd";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@mahd", nv.MaHD);
                 command.Parameters.AddWithValue("@manv", nv.MaNV);
@@ -116,7 +118,7 @@ namespace KTXC1
                 command.Parameters.AddWithValue("@mctd", nv.MaCongToDien);
                 command.Parameters.AddWithValue("@mctn", nv.MaCongToNuoc);
                 command.Parameters.AddWithValue("@tongtien", nv.TongTien);
-                command.Parameters.AddWithValue("@ngayGhi", Convert.ToDateTime(nv.NgayGhi));
+                command.Parameters.AddWithValue("@ngayghi", Convert.ToDateTime(nv.NgayGhi));
                 connection.Open();
                 int result = command.ExecuteNonQuery();
                 if (result >= 1)

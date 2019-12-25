@@ -49,9 +49,9 @@ namespace KTXC1
             get { return donGia; }
             set { donGia = value; }
         }
-        double thanhTien;
+        long thanhTien;
 
-        public double ThanhTien
+        public long ThanhTien
         {
             get { return thanhTien; }
             set { thanhTien = value; }

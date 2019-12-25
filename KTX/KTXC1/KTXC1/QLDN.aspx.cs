@@ -55,6 +55,7 @@ namespace KTXC1
             float gia = float.Parse(txtDongia.Text);
             string tieuthu = txtTieuthu.Text;
             double thanhtien = double.Parse(tieuthu) * gia;
+            long thanhtien1 = Convert.ToInt64(thanhtien);
             DN dn = new DN
             {
                 MaCongToNuoc = maCongToNuoc,
@@ -63,7 +64,7 @@ namespace KTXC1
                 NgayGhi = ngayghi,
                 TieuThu = tieuthu,
                 DonGia = gia,
-                ThanhTien = thanhtien,
+                ThanhTien = thanhtien1,
             };
             return dn;
         }

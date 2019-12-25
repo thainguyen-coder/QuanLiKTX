@@ -12,7 +12,7 @@ namespace KTXC1
         string maPhong;
         string maCongToDien;
         string maCongToNuoc;
-        double tongTien;
+        long tongTien;
         string ngayGhi;
 
         public string MaHD
@@ -80,7 +80,7 @@ namespace KTXC1
             }
         }
 
-        public double TongTien
+        public long TongTien
         {
             get
             {

@@ -28,3 +28,9 @@ C:\Users\PC\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\bin\KTXC1.pdb
 C:\Users\PC\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.dll
 C:\Users\PC\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.pdb
 C:\Users\PC\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.csprojResolveAssemblyReference.cache
+D:\CN_Net\QuanLiKTX\KTX\KTXC1\KTXC1\bin\KTXC1.dll.config
+D:\CN_Net\QuanLiKTX\KTX\KTXC1\KTXC1\bin\KTXC1.dll
+D:\CN_Net\QuanLiKTX\KTX\KTXC1\KTXC1\bin\KTXC1.pdb
+D:\CN_Net\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.csprojResolveAssemblyReference.cache
+D:\CN_Net\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.dll
+D:\CN_Net\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.pdb

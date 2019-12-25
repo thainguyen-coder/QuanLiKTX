@@ -38,7 +38,7 @@ namespace KTXC1
                         ChisoCuoi = (string)reader["chiSoCuoi"],
                         DonGia = (float)reader["gia"],
                         TieuThu = (string)reader["TieuThu"],
-                        ThanhTien = (double)reader["thanhTien"],
+                        ThanhTien = (long)reader["thanhTien"],
                         NgayGhi = reader["ngayGhi"].ToString(),
                     };
                     return D;
@@ -56,6 +56,24 @@ namespace KTXC1
                 connection.Open();
                 int count = (int)command.ExecuteScalar();
                 return (count >= 1);
+            }
+        }
+
+        public long getThanhTien(string maCongToDien)
+        {
+
+            string sql = "SELECT * FROM DIEN WHERE maCongToDien = @ctd ";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@ctd", maCongToDien);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    return (long)reader["thanhTien"];
+                }
+                return 0;
             }
         }
         public DataTable Tim(string search)

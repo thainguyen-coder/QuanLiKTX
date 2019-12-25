@@ -35,7 +35,8 @@ namespace KTXC1
             string mctn = txtMaCTN.Text;
             string mctd = txtMaCTD.Text;
             string ngay = txtNgayGhi.Text;
-            double tongtien =double.Parse(TextBox1.Text);
+            long tongtien =long.Parse(TextBox1.Text);
+
 
 
 
@@ -55,8 +56,7 @@ namespace KTXC1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 Hoadon ph = LayDuLieuTuForm();
 
                 HoaDonDAO phDAO = new HoaDonDAO();
@@ -80,11 +80,8 @@ namespace KTXC1
                         lblThongBao.Text = "Có lỗi, vui lòng thử lại!";
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                lblThongBao.Text = "cc";
-            }
+            
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -152,6 +149,43 @@ namespace KTXC1
         {
 
         }
+
+        protected void tinhThanhTien()
+        {
+            string maCongToDien = txtMaCTD.Text;
+            string maCongToNuoc = txtMaCTN.Text;
+            DienDAO dienDao = new DienDAO();
+            long tienDien = dienDao.getThanhTien(maCongToDien);
+
+            QLDNDAO nuocDao = new QLDNDAO();
+            long tienNuoc = nuocDao.getThanhTien(maCongToNuoc);
+
+            TextBox1.Text = (tienDien + tienNuoc) + "";
+
+        }
+
+        protected void txtMaCTD_TextChanged(object sender, EventArgs e)
+        {
+            this.tinhThanhTien();
+        }
+
+        protected void txtMaCTN_TextChanged(object sender, EventArgs e)
+        {
+            this.tinhThanhTien();
+
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            this.tinhThanhTien();
+
+        }
+
+        protected void Button6_Click1(object sender, EventArgs e)
+        {
+            this.tinhThanhTien();
+        }
+
     }
 
 }

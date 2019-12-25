@@ -107,7 +107,7 @@
                     <asp:Label ID="Label1" runat="server" Text="Tổng Tiền:"></asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Enabled="False" ></asp:TextBox>
 
                 </td>
               
@@ -117,7 +117,8 @@
                     &nbsp;<img src="img/them.png" height="30px" width="30px" /><asp:Button ID="Button1" runat="server" Text="Thêm" class="btn" OnClick="Button1_Click"   />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="img/update.png" height="30px" width="30px" /><asp:Button ID="Button2" runat="server" Text="Chỉnh sửa" class="btn" OnClick="Button2_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button6" runat="server" Text="Tính Tổng Tiền" class="btn" OnClick="Button6_Click1" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="img/xoa.png" height="30px" width="30px" /><asp:Button ID="Button3" runat="server" Text="Xóa" class="btn"  OnClientClick="return confirm(&quot;Bạn chắc chắn muốn xóa?&quot;);" OnClick="Button3_Click"/>
                     </br>
                     <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" OnClick="Button5_Click" />

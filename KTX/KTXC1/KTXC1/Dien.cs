@@ -13,7 +13,7 @@ namespace KTXC1
         string ngayGhi;
         string tieuThu;
         float donGia;
-        double thanhTien;
+        long thanhTien;
         public string TieuThu
         {
             get { return tieuThu; }
@@ -38,7 +38,7 @@ namespace KTXC1
         }
 
 
-        public double ThanhTien
+        public long ThanhTien
         {
             get { return thanhTien; }
             set { thanhTien = value; }
