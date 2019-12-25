@@ -49,6 +49,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMaHĐ;
         
         /// <summary>
+        /// rfvMaHĐ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaHĐ;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaNV;
+        
+        /// <summary>
+        /// rfvMaNV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaNV;
         
         /// <summary>
         /// Label5 control.
@@ -85,6 +103,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMaPhong;
         
         /// <summary>
+        /// rfvMaPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaPhong;
+        
+        /// <summary>
         /// Label8 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +130,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMaCTD;
         
         /// <summary>
+        /// rfvMaCTD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaCTD;
+        
+        /// <summary>
         /// Label7 control.
         /// </summary>
         /// <remarks>
@@ -119,6 +155,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaCTN;
+        
+        /// <summary>
+        /// rfvMaCTN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaCTN;
         
         /// <summary>
         /// Label6 control.

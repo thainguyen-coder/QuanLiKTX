@@ -185,7 +185,7 @@ namespace KTXC1
         }
         public override void VerifyRenderingInServerForm(Control control)
         {
-            /* Verifies that the control is rendered */
+        
         }
 
         protected void Button5_Click(object sender, EventArgs e)
@@ -197,6 +197,7 @@ namespace KTXC1
 
             
         }
+
 
         protected void tinhThanhTien()
         {

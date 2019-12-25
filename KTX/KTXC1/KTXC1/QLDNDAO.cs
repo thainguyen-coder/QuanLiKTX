@@ -128,18 +128,22 @@ namespace KTXC1
         }
         public bool Xoa(string maCongToNuoc)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                string sql = @"DELETE FROM NUOC WHERE maCongToNuoc = @mctn";
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@mctn", maCongToNuoc);
-                connection.Open();
-                int result = command.ExecuteNonQuery();
-                if (result >= 1)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    return true;
+                    string sql = @"DELETE FROM NUOC WHERE maCongToNuoc = @mctn";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@mctn", maCongToNuoc);
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    if (result >= 1)
+                    {
+                        return true;
+                    }
                 }
             }
+            catch (Exception) { }
             return false;
         }
     }

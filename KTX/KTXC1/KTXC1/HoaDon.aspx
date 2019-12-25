@@ -42,6 +42,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMaHĐ" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvMaHĐ" runat="server" ErrorMessage="*" ControlToValidate="txtMaHĐ" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -53,6 +54,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMaNV" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvMaNV" runat="server" ErrorMessage="*" ControlToValidate="txtMaNV" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -64,7 +66,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMaPhong" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvMaPhong" runat="server" ErrorMessage="*" ControlToValidate="txtMaPhong" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -75,6 +77,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMaCTD" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvMaCTD" runat="server" ErrorMessage="*" ControlToValidate="txtMaCTD" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -86,7 +89,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMaCTN" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvMaCTN" runat="server" ErrorMessage="*" ControlToValidate="txtMaCTN" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -121,7 +124,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="img/xoa.png" height="30px" width="30px" /><asp:Button ID="Button3" runat="server" Text="Xóa" class="btn"  OnClientClick="return confirm(&quot;Bạn chắc chắn muốn xóa?&quot;);" OnClick="Button3_Click"/>
                     </br>
-                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" OnClick="Button5_Click" />
+                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" OnClick="Button5_Click"/>
                 </td>
             </tr>
 

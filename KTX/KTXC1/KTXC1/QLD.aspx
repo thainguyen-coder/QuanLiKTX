@@ -46,7 +46,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMacongtodien" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvMaCTD" runat="server" ErrorMessage="*" ControlToValidate="txtMacongtodien" ForeColor="#CC3300"> </asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -58,7 +58,7 @@
                 <td>
                     
                     <asp:TextBox ID="txtChisocdau" runat="server"></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvChisocdau" runat="server" ErrorMessage="*" ControlToValidate="txtChisocdau" ForeColor="#CC3300"> </asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -69,7 +69,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtChisocuoi" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvCSC" runat="server" ErrorMessage="*" ControlToValidate="txtChisocuoi" ForeColor="#CC3300"> </asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -91,7 +91,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtDongia" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvDonGia" runat="server" ErrorMessage="*" ControlToValidate="txtDongia" ForeColor="#CC3300"> </asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -137,6 +137,7 @@
                 <asp:BoundField DataField="NgayGhi" HeaderText="Ngày ghi" />
                 <asp:BoundField DataField="gia" HeaderText="Đơn giá" />
                 <asp:BoundField  DataField="ThanhTien" HeaderText="Thành tiền" />
+                <asp:CommandField ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
             <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />

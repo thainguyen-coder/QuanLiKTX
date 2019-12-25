@@ -43,7 +43,11 @@ namespace KTXC1
 
         protected void gvDienNuoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            txtMacongtonuoc.Text = gvNuoc.SelectedRow.Cells[0].Text;
+            txtChisocdau.Text = gvNuoc.SelectedRow.Cells[1].Text;
+            txtChisocuoi.Text = gvNuoc.SelectedRow.Cells[2].Text;
+            txtNgayghi.Text = gvNuoc.SelectedRow.Cells[3].Text;
+            txtDongia.Text = gvNuoc.SelectedRow.Cells[4].Text;
         }
         private DN LayDuLieuTuForm()
         {

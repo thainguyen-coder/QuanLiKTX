@@ -92,21 +92,23 @@ namespace KTXC1
         }
 
         protected void btnXoa_Click(object sender, EventArgs e)
-        {
+        { 
             string maphong = txtMaPhong.Text;
 
             PhongDAO phDAO = new PhongDAO();
 
             bool result = phDAO.Xoa(maphong);
-            if (result)
-            {
-                lblThongBao.Text = "Xóa thành công";
-                LayPhongVaoGV();
-            }
-            else
-            {
-                lblThongBao.Text = "Xóa không thành công, vui lòng kiểm tra lại!";
-            }
+             
+                if (result)
+                {
+                    lblThongBao.Text = "Xóa thành công";
+                    LayPhongVaoGV();
+                }
+                else
+                {
+                    lblThongBao.Text = "Xóa không thành công, vui lòng kiểm tra lại!";
+                }
+            
         }
 
 
