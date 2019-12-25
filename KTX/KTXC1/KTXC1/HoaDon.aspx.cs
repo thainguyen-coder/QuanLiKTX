@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace KTXC1
 {
@@ -24,8 +23,21 @@ namespace KTXC1
             if (!IsPostBack)
             {
                 LayDuLieu();
+                BindGridViewData();
             }
 
+        }
+        private void BindGridViewData()
+        {
+            string connection = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Select * from HOADON", con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                gvHoaDon.DataSource = ds;
+                gvHoaDon.DataBind();
+            }
         }
         private Hoadon LayDuLieuTuForm()
         {
@@ -145,10 +157,7 @@ namespace KTXC1
 
         }
 
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         protected void tinhThanhTien()
         {

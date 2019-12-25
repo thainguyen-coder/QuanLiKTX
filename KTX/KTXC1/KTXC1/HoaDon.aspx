@@ -124,7 +124,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="img/xoa.png" height="30px" width="30px" /><asp:Button ID="Button3" runat="server" Text="Xóa" class="btn"  OnClientClick="return confirm(&quot;Bạn chắc chắn muốn xóa?&quot;);" OnClick="Button3_Click"/>
                     </br>
-                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn" OnClick="Button5_Click" />
+                    <img src="img/thanhtoan.png" height="30px" width="30px" style="margin-left:150px" /><asp:Button ID="Button5" runat="server" Text="In hóa đơn" class="btn"/>
                 </td>
             </tr>
 
