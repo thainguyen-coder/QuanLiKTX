@@ -49,6 +49,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMacongtodien;
         
         /// <summary>
+        /// rfvMaCTD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaCTD;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtChisocdau;
         
         /// <summary>
+        /// rfvChisocdau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvChisocdau;
+        
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChisocuoi;
+        
+        /// <summary>
+        /// rfvCSC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCSC;
         
         /// <summary>
         /// Label8 control.
@@ -119,6 +146,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDongia;
+        
+        /// <summary>
+        /// rfvDonGia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDonGia;
         
         /// <summary>
         /// Label6 control.

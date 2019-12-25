@@ -49,6 +49,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMaPhong;
         
         /// <summary>
+        /// rfvMaPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaPhong;
+        
+        /// <summary>
         /// Lbl3 control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMaSV;
         
         /// <summary>
+        /// rfvMaSV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaSV;
+        
+        /// <summary>
         /// Lbl4 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNgayBD;
+        
+        /// <summary>
+        /// rfvNgayBD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNgayBD;
         
         /// <summary>
         /// Label10 control.
@@ -110,6 +137,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNgayKT;
+        
+        /// <summary>
+        /// rfvNgayKT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNgayKT;
         
         /// <summary>
         /// Label12 control.

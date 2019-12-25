@@ -129,18 +129,21 @@ namespace KTXC1
         }
         public bool Xoa(string maCongToDien)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string sql = @"DELETE FROM DIEN WHERE maCongToDien = @mctd";
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@mctd", maCongToDien);
-                connection.Open();
-                int result = command.ExecuteNonQuery();
-                if (result >= 1)
+            try {
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    return true;
+                    string sql = @"DELETE FROM DIEN WHERE maCongToDien = @mctd";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@mctd", maCongToDien);
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    if (result >= 1)
+                    {
+                        return true;
+                    }
                 }
             }
+            catch (Exception) { }
             return false;
         }
         public Dien LayDien(string mactd)

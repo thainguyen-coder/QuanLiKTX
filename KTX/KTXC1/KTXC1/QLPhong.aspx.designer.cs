@@ -49,6 +49,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMaPhong;
         
         /// <summary>
+        /// rfvMaPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaPhong;
+        
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtTinhTrangPhong;
         
         /// <summary>
+        /// rfvTinhTrangPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTinhTrangPhong;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSoLuongSV;
+        
+        /// <summary>
+        /// rfvSLSV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSLSV;
         
         /// <summary>
         /// btnThem control.

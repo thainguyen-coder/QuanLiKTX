@@ -126,22 +126,22 @@ namespace KTXC1
         }
         public bool Xoa(string manv)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                string sql = @"DELETE FROM NHANVIEN WHERE maNV = @manv";
-                string sql1 = @"DELETE FROM TAIKHOAN1 WHERE maNV = @manv";
-                SqlCommand command = new SqlCommand(sql, connection);
-                SqlCommand command1 = new SqlCommand(sql1, connection);
-                command.Parameters.AddWithValue("@manv", manv);
-                command1.Parameters.AddWithValue("@manv", manv);
-                connection.Open();
-                int result1 = command1.ExecuteNonQuery();
-                int result = command.ExecuteNonQuery();
-                if (result >= 1)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    return true;
+                    string sql = @"DELETE FROM NHANVIEN WHERE maNV = @manv";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@manv", manv);
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    if (result >= 1)
+                    {
+                        return true;
+                    }
                 }
             }
+            catch (Exception) { }
             return false;
         }
     }

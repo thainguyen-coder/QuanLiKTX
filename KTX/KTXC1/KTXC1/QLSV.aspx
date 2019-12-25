@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HienThi.Master" AutoEventWireup="true" CodeBehind="QLSV.aspx.cs" Inherits="KTXC1.QLSV" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style3 {
+            width: 311px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Menu ID="Menu" runat="server" BackColor="#66CCFF" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="Black" Orientation="Horizontal" StaticSubMenuIndent="10px">
@@ -31,14 +36,15 @@
             </asp:Menu>
     <div>
         <asp:Label ID="Lbl1" runat="server" Font-Bold="true" Font-Size="X-Large" ForeColor="Red" Text="QUẢN LÝ SINH VIÊN"></asp:Label>
-        <table style="width: 463px;">
+        <table style="width: 555px;">
             <tr>
                 <td>
 
                     <asp:Label ID="Lbl2" runat="server" Text="Mã sinh viên:"></asp:Label>
                 </td>
-                <td>
+                <td class="auto-style3">
                     <asp:TextBox ID="txtMaSV" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvMaSV" runat="server" ErrorMessage="*" ControlToValidate="txtMaSV" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -48,8 +54,9 @@
 
                     <asp:Label ID="Lbl3" runat="server" Text="Họ tên sinh viên:"></asp:Label>
                      </td>
-                <td>
+                <td class="auto-style3">
                     <asp:TextBox ID="txtTenSV" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvHoTen" runat="server" ErrorMessage="*" ControlToValidate="txtTenSV" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -59,7 +66,7 @@
 
                     <asp:Label ID="Lbl4" runat="server" Text="Ngày sinh:"></asp:Label>
                      </td>
-                <td>
+                <td class="auto-style3">
                     <asp:TextBox ID="txtNgaySinh" runat="server" ></asp:TextBox>
 
                 </td>
@@ -71,7 +78,7 @@
 
                     <asp:Label ID="Lbl5" runat="server" Text="Giới tính:"></asp:Label>
                      </td>
-                <td>
+                <td class="auto-style3">
                     <asp:DropDownList ID="ddlGioiTinh" runat="server">
                         <asp:ListItem>Nam</asp:ListItem>
                         <asp:ListItem>Nữ</asp:ListItem>
@@ -85,8 +92,10 @@
 
                     <asp:Label ID="Lbl6" runat="server" Text="CMND:"></asp:Label>
                      </td>
-                <td>
+                <td class="auto-style3">
                     <asp:TextBox ID="txtCMND" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCMND" runat="server" ErrorMessage="*" ControlToValidate="txtCMND" ForeColor="Red"></asp:RequiredFieldValidator>
+
 
                 </td>
               
@@ -96,7 +105,7 @@
 
                     <asp:Label ID="Lbl7" runat="server" Text="Số điện thoại:"></asp:Label>
                      </td>
-                <td>
+                <td class="auto-style3">
                     <asp:TextBox ID="txtSDT" runat="server" ></asp:TextBox>
 
                 </td>
@@ -107,8 +116,10 @@
 
                     <asp:Label ID="Lbl8" runat="server" Text="Lớp:"></asp:Label>
                      </td>
-                <td>
+                <td class="auto-style3">
                     <asp:TextBox ID="txtLop" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvLop" runat="server" ErrorMessage="*" ControlToValidate="txtLop" ForeColor="Red"></asp:RequiredFieldValidator>
+
 
                 </td>
               

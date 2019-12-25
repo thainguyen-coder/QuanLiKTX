@@ -39,6 +39,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMaPhong" runat="server"  ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvMaPhong" runat="server" ErrorMessage="*" ControlToValidate="txtMaPhong" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -47,10 +48,11 @@
                 <td>
 
                     <asp:Label ID="Label3" runat="server" Text="Tình trạng phòng:"></asp:Label>
+
                     </td>
                 <td>
                     <asp:TextBox ID="txtTinhTrangPhong" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvTinhTrangPhong" runat="server" ErrorMessage="*" ControlToValidate="txtTinhTrangPhong" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -61,7 +63,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtSoLuongSV" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvSLSV" runat="server" ErrorMessage="*" ControlToValidate="txtSoLuongSV" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
