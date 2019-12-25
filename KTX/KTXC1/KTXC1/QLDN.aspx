@@ -46,6 +46,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMacongtonuoc" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvMaCTN" runat="server" ErrorMessage="*" ControlToValidate="txtMacongtonuoc" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -57,6 +58,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtChisocdau" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCSD" runat="server" ErrorMessage="*" ControlToValidate="txtChisocdau" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -68,6 +70,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtChisocuoi" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCSC" runat="server" ErrorMessage="*" ControlToValidate="txtChisocuoi" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -90,6 +93,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtDongia" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvDonGia" runat="server" ErrorMessage="*" ControlToValidate="txtDongia" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -100,7 +104,7 @@
                     <asp:Label ID="Label6" runat="server" Text="Tiêu thụ:"></asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtTieuthu" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtTieuthu" runat="server" Enabled="False" ></asp:TextBox>
 
                 </td>
               

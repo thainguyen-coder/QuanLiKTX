@@ -39,6 +39,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtMaNV" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvMaNV" runat="server" ErrorMessage="*" ControlToValidate="txtMaNV" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
               
@@ -50,7 +51,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtTenNV" runat="server"></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvHoTen" runat="server" ErrorMessage="*" ControlToValidate="txtTenNV" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -87,7 +88,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtCMND" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvCMND" runat="server" ErrorMessage="*" ControlToValidate="txtCMND" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -98,7 +99,7 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtSDT" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvSDT" runat="server" ErrorMessage="*" ControlToValidate="txtSDT" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>

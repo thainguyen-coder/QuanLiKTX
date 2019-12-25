@@ -95,18 +95,26 @@ namespace KTXC1
         }
         public bool Xoa(string mp)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                string sql = @"DELETE FROM PHONG WHERE maPhong = @maphong";
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@maphong", mp);
-                connection.Open();
-                int result = command.ExecuteNonQuery();
-                if (result >= 1)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    return true;
+                    string sql = @"DELETE FROM PHONG WHERE maPhong = @maphong";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@maphong", mp);
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    if (result >= 1)
+                    {
+                        return true;
+                    }
                 }
             }
+            catch (Exception)
+            {
+                
+            }
+          
             return false;
         }
         public DataTable Tim(string key)

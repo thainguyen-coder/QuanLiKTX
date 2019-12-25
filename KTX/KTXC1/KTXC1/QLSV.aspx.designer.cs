@@ -49,6 +49,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtMaSV;
         
         /// <summary>
+        /// rfvMaSV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaSV;
+        
+        /// <summary>
         /// Lbl3 control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTenSV;
+        
+        /// <summary>
+        /// rfvHoTen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHoTen;
         
         /// <summary>
         /// Lbl4 control.
@@ -130,6 +148,15 @@ namespace KTXC1 {
         protected global::System.Web.UI.WebControls.TextBox txtCMND;
         
         /// <summary>
+        /// rfvCMND control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCMND;
+        
+        /// <summary>
         /// Lbl7 control.
         /// </summary>
         /// <remarks>
@@ -164,6 +191,15 @@ namespace KTXC1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLop;
+        
+        /// <summary>
+        /// rfvLop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLop;
         
         /// <summary>
         /// btnThem control.

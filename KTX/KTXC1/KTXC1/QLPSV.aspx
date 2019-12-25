@@ -39,7 +39,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtMaPhong" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvMaPhong" runat="server" ErrorMessage="*" ControlToValidate="txtMaPhong" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -50,7 +50,7 @@
                      </td>
                 <td>
                     <asp:TextBox ID="txtMaSV" runat="server"></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvMaSV" runat="server" ErrorMessage="*" ControlToValidate="txtMaSV" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
               
             </tr>
@@ -58,10 +58,11 @@
                 <td>
 
                     <asp:Label ID="Lbl4" runat="server" Text="Ngày bắt đầu:"></asp:Label>
+
                      </td>
                 <td>
                     <asp:TextBox ID="txtNgayBD" runat="server" ></asp:TextBox>
-
+                    <asp:RequiredFieldValidator ID="rfvNgayBD" runat="server" ErrorMessage="*" ControlToValidate="txtNgayBD" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
                 <td> <asp:Label ID="Label10" runat="server" Text="(YYYY/MM/DD)" ForeColor="red"></asp:Label></td>
               
@@ -73,6 +74,7 @@
                      </td>
                 <td>
                     <asp:TextBox ID="txtNgayKT" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvNgayKT" runat="server" ErrorMessage="*" ControlToValidate="txtNgayKT" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
                 <td> <asp:Label ID="Label12" runat="server" Text="(YYYY/MM/DD)" ForeColor="red"></asp:Label></td>
