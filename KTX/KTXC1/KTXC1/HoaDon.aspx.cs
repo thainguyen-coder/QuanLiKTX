@@ -7,6 +7,9 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.html.simpleparser;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Xml.Linq;
+using System.Web.UI;
+using System.Web;
 
 namespace KTXC1
 {
@@ -23,7 +26,7 @@ namespace KTXC1
             if (!IsPostBack)
             {
                 LayDuLieu();
-                BindGridViewData();
+                LayDuLieu();
             }
 
         }
@@ -32,7 +35,10 @@ namespace KTXC1
             string connection = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connection))
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select * from HOADON", con);
+                SqlDataAdapter da = new SqlDataAdapter(" SELECT * FROM HOADON  ", con);
+
+
+                
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 gvHoaDon.DataSource = ds;
@@ -156,8 +162,42 @@ namespace KTXC1
         {
 
         }
+        private void ExportGridToExcel()
+        {
+            //cach 2
+            Response.Clear();
+            Response.Buffer = true;
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.Charset = "";
+            string FileName = "Hóa Đơn" + DateTime.Now + ".xls";
+            StringWriter strwritter = new StringWriter();
+            HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", "attachment;filename=" + FileName);
+            gvHoaDon.GridLines = GridLines.Both;
+            gvHoaDon.HeaderStyle.Font.Bold = true;
+            gvHoaDon.RenderControl(htmltextwrtter);
+            Response.Write(strwritter.ToString());
+            Response.End();
 
+        }
+        public override void VerifyRenderingInServerForm(Control control)
+        {
         
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            ExportGridToExcel();
+
+
+
+
+            
+        }
+
 
         protected void tinhThanhTien()
         {
