@@ -176,7 +176,6 @@
     <Content Include="StyleSheet.css" />
     <Content Include="TaiKhoan.aspx" />
     <Content Include="TrangChu.aspx" />
-    <Content Include="TrangQL.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -280,13 +279,6 @@
     </Compile>
     <Compile Include="TrangChu.aspx.designer.cs">
       <DependentUpon>TrangChu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TrangQL.aspx.cs">
-      <DependentUpon>TrangQL.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TrangQL.aspx.designer.cs">
-      <DependentUpon>TrangQL.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
