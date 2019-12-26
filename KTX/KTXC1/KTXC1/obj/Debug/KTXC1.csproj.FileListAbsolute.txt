@@ -40,7 +40,6 @@ C:\Users\HS\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\bin\KTXC1.pdb
 C:\Users\HS\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.csproj.CoreCompileInputs.cache
 C:\Users\HS\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.dll
 C:\Users\HS\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.pdb
-C:\Users\HS\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\bin\itextsharp.dll
 C:\Users\HS\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.csprojAssemblyReference.cache
 C:\Users\HS\Desktop\QuanLiKTX\KTX\KTXC1\KTXC1\obj\Debug\KTXC1.csproj.CopyComplete
 D:\CN_Net\QuanLiKTX\KTX\KTXC1\KTXC1\bin\itextsharp.dll

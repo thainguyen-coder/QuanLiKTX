@@ -56,7 +56,10 @@
                 <asp:Label ID="Label3" runat="server" ForeColor="#6600CC" Font-Bold="true" Text="Mật khẩu:" ></asp:Label>    
                 <asp:TextBox ID="txtPassWord" runat="server" style="margin-left: 39px" placeholder="Mật khẩu" TextMode="Password"></asp:TextBox> 
                 <br />
-                <asp:CheckBox ID="ckpHienPass" CssClass="ok2" runat="server"   Text="Hiển thị mật khẩu" />
+                  <input type="checkbox" onchange="document.getElementById('txtPassWord').type = this.checked ? 'text' : 'txtPassWord'">
+                Hiện mật khẩu
+
+
                 <br />
                 <br />
                 <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Sua161.png" Height="16px" Width="16px" style="margin-top: 11px"  />

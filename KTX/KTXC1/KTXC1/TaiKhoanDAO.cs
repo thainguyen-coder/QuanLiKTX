@@ -63,7 +63,7 @@ namespace KTXC1
         }
         public bool KTTenDN(string tdn)
         {
-            string sql = @"SELECT COUNT(*) FROM TAIKHOAN WHERE tenDangNhap = @tendangnhap";
+            string sql = @"SELECT COUNT(*) FROM TAIKHOAN1 WHERE tenDangNhap = @tendangnhap";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(sql, connection);
