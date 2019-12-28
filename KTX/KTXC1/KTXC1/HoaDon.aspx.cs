@@ -165,21 +165,29 @@ namespace KTXC1
         private void ExportGridToExcel()
         {
             //cach 2
-            Response.Clear();
-            Response.Buffer = true;
-            Response.ClearContent();
-            Response.ClearHeaders();
-            Response.Charset = "";
+            //Đối tượng Response dùng để gửi các đáp ứng của server cho client. Chúng ta thường dùng một số lệnh Response sau:
+            //Xóa tất cả đầu ra nội dung từ luồng đệm.
+           
+       
             string FileName = "Hóa Đơn" + DateTime.Now + ".xls";
+            // cho phép bạn ghi vào chuỗi một cách đồng bộ hoặc không đồng bộ. 
             StringWriter strwritter = new StringWriter();
+            //được sử dụng để hiển thị HTML 4.0 cho các trình duyệt máy tính
             HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
+
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            //cung cấp loại nội dung để mở tệp xlsx trong broowser ....
+
             Response.ContentType = "application/vnd.ms-excel";
             Response.AddHeader("Content-Disposition", "attachment;filename=" + FileName);
+
             gvHoaDon.GridLines = GridLines.Both;
             gvHoaDon.HeaderStyle.Font.Bold = true;
+            //xuất nội dung điều khiển máy chủ cho một đối tượng HtmlTextWrite
             gvHoaDon.RenderControl(htmltextwrtter);
+            //Đưa thông tin ra màn hình trang web
             Response.Write(strwritter.ToString());
+            //Ngừng xử lý các Script. Dùng lệnh này khi muốn dừng xử lý ở một vị trí nào đó và bỏ qua các mã lệnh ASP ở phía sau. Đây là cách rất hay dùng trong một số tình huống, chẳng hạn như debug lỗi
             Response.End();
 
         }
@@ -191,11 +199,7 @@ namespace KTXC1
         protected void Button5_Click(object sender, EventArgs e)
         {
             ExportGridToExcel();
-
-
-
-
-            
+           
         }
 
 

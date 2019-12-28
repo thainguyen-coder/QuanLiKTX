@@ -166,7 +166,6 @@
     <Content Include="Images\XoaPhong32.png" />
     <Content Include="Images\XoaSinhVien32.png" />
     <Content Include="Images\XoaSinhVien321.png" />
-    <Content Include="KetNoi.aspx" />
     <Content Include="QLD.aspx" />
     <Content Include="QLDN.aspx" />
     <Content Include="QLNV.aspx" />
@@ -205,13 +204,6 @@
     </Compile>
     <Compile Include="Hoadon.cs" />
     <Compile Include="HoaDonDAO.cs" />
-    <Compile Include="KetNoi.aspx.cs">
-      <DependentUpon>KetNoi.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="KetNoi.aspx.designer.cs">
-      <DependentUpon>KetNoi.aspx</DependentUpon>
-    </Compile>
     <Compile Include="NhanVien.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="Phong.cs" />
